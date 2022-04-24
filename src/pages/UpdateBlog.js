@@ -15,10 +15,10 @@ import { BlogContext } from "../context/BlogContextProvider";
 
 
 
-const NewBlog = () => {
+const UpdateBlog = () => {
   const navigate = useNavigate();
   const {currentUser} = useContext(AuthContext)
-  const {addNewBlog} = useContext(BlogContext)
+  const {updateBlog} = useContext(BlogContext)
 
   const formik = useFormik({
     initialValues: {
@@ -29,7 +29,7 @@ const NewBlog = () => {
     },
     onSubmit:async (values) => {
         try {
-          await addNewBlog(values)
+          await updateBlog(values)
           navigate("/")
         } catch (err) {
           alert(err.message)
@@ -62,7 +62,7 @@ const NewBlog = () => {
       </Avatar>
 
       <Typography sx={{ margin: "0.5rem" }} variant="h4">
-        New Blog
+        Update Blog
       </Typography>
       <Formik>
         {() => (
@@ -134,5 +134,5 @@ const NewBlog = () => {
   );
 };
 
-export default NewBlog;
+export default UpdateBlog;
 

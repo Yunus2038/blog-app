@@ -58,7 +58,7 @@ const Register = () => {
       username: "",
       email: "",
       password: "",
-      confirm: "",
+      confirm: ""
     },
     validationSchema: Schema,
     onSubmit: async (values) => {

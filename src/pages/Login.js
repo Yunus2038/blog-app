@@ -27,7 +27,7 @@ const Login = () => {
       await signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user
-        console.log(user)
+        // console.log(user)
         navigate("/")
       }).catch((err) => {
         alert(err.message)
@@ -83,7 +83,7 @@ const Login = () => {
         Login
       </Typography>
       <Formik>
-        {({ values, handleSubmit, touched, errors, handleBlur }) => (
+        {() => (
           <form onSubmit={formik.handleSubmit}>
             <Grid container spacing={5}>
               <Grid item xs={12}>
