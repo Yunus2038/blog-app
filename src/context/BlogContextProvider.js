@@ -52,7 +52,7 @@ const BlogContextProvider = (props) => {
       const newPostKey = push(child(ref(db), "contact")).key
       const updates = {}
       updates["/contact/" + newPostKey ] = postData
-      updates[`/user-contact/` + "id" + "/" + newPostKey ] = postData
+      // updates[`/user-contact/` + id + "/" + newPostKey ] = postData
       return update(ref(db), updates)
     } catch (err) {
       alert(err.message)
